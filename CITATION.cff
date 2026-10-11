@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "logrono-vulnerable-room-to-green"
+title: "Room to green near the homes of socially vulnerable residents at pluvial flood risk in Logroño"
 message: "If you use this software, please cite it as below."
 type: software
 authors:
@@ -11,6 +11,8 @@ repository-code: "https://github.com/annefou/logrono-vulnerable-room-to-green"
 license: MIT
 version: "0.1.0"
 date-released: "2026-10-11"
+abstract: >-
+  Among the residents of buildings at pluvial flood risk in Logroño (Spain), do the most socially vulnerable have less land that could be greened near their homes than the least vulnerable? Using the result tables of the Logroño flood-adaptation scenarios analysis (v0.2.0), Spanish Cadastre building footprints and Copernicus Urban Atlas 2018 land use, this repository measures the share of land within 50, 100 and 200 m of each building that could be greened and compares vulnerability groups under present and future design rainfall. It holds one FORRT nanopublication chain (question-rooted) and its headline figure.
 # Identifiers below are recorded AUTOMATICALLY on each release by
 # .github/workflows/release-identifiers.yml — don't fill them in by hand.
 #
@@ -32,8 +34,12 @@ identifiers:
   #   - type: doi   value: <version DOI>  "Version DOI for vX.Y.Z — pins this exact release; cite this from nanopubs"
   #   - type: swh   value: swh:1:rev:<commit>;origin=<repo>  "Software Heritage ID of the vX.Y.Z source tree"
 keywords:
-  - replication
-  - reproducibility
+  - pluvial flooding
+  - flood risk
+  - social vulnerability
+  - environmental justice
+  - urban green space
+  - Logroño
   - FORRT
   - nanopublication
   - Science-Live
@@ -43,18 +49,53 @@ references:
     authors:
       - family-names: "Vogelbacher"
         given-names: "Anastasia"
+      - family-names: "von Szombathely"
+        given-names: "Malte"
+      - family-names: "Lennartz"
+        given-names: "Marc"
+      - family-names: "Poschlod"
+        given-names: "Benjamin"
+      - family-names: "Sillmann"
+        given-names: "Jana"
+    journal: "Natural Hazards and Earth System Sciences"
+    volume: 26
+    start: 2765
+    end: 2783
     year: "2026"
     doi: "10.5194/nhess-26-2765-2026"
-  # Prior FORRT chain this replication extends or qualifies. The URI below
-  # is the canonical persistent pointer to the prior constellation; the
-  # imported summary itself (CHAIN_SUMMARY.md, constellation.json, cached
-  # TriG) is regenerated on demand via `/import-from-nanopub <URL>` and
-  # lives in the gitignored `nanopubs/imported/` directory.
-  #
-  # If your replication does NOT extend a prior chain, init-template
-  # removes this entry. If it does, init-template substitutes the URI
-  # and description below from your responses.
+  - type: software
+    title: "Building-level pluvial flood risk in Logroño under future rainfall and nature-based solution scenarios"
+    authors:
+      - family-names: "Fouilloux"
+        given-names: "Anne"
+    version: "v0.2.0"
+    year: "2026"
+    doi: "10.5281/zenodo.23302113"
+    notes: "The shared analysis whose result tables this repository uses (notebooks/01_data_download.py)."
+  - type: dataset
+    title: "Urban Atlas Land Cover/Land Use 2018 (vector), Europe, 3-yearly"
+    authors:
+      - name: "European Environment Agency"
+    year: "2026"
+    doi: "10.2909/9911fe21-57f6-46fb-ae26-d76e7bb6378f"
+  - type: dataset
+    title: "INSPIRE Buildings, municipality 26900 (Logroño)"
+    authors:
+      - name: "Dirección General del Catastro"
+    url: "https://www.catastro.hacienda.gob.es/webinspire/index.html"
+    notes: "Downloaded at run time under the Catastro INSPIRE licence of access and use (2016); original files not redistributed."
+  - type: dataset
+    title: "Urban pluvial flood maps under different green cover scenarios"
+    authors:
+      - family-names: "Staccione"
+        given-names: "Andrea"
+      - family-names: "Pal"
+        given-names: "Jeremy S."
+    year: "2024"
+    doi: "10.5281/zenodo.14035876"
+  # The FORRT chain this work extends (persistent pointer; regenerate the local
+  # summary with /import-from-nanopub <URL>).
   - type: generic
     title: "Logroño city-wide greening and social vulnerability — CiTO citation of the greening chain this study extends"
     url: "https://w3id.org/sciencelive/np/RAbEYU8rm6cKE7_1iSKXBUr1SLo5krtS27_IT1Km1BVqU"
-    notes: "Apex CiTO Citation of the prior FORRT chain this replication extends. Re-run `/import-from-nanopub <URL>` to repopulate nanopubs/imported/ locally."
+    notes: "Apex CiTO citation of the greening chain; its Outcome is https://w3id.org/sciencelive/np/RA7f_o-KNPr1Rq2OPPJD47XcUYtPvIRF4rRDqFg-tsZgA"

@@ -1,8 +1,8 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
-  "name": "logrono-vulnerable-room-to-green",
-  "description": "FORRT study: room to green and flood-risk reduction for the most socially vulnerable residents of Logroño (Spain)",
+  "name": "Room to green near the homes of socially vulnerable residents at pluvial flood risk in Logroño",
+  "description": "Among the residents of buildings at pluvial flood risk in Logroño (Spain), do the most socially vulnerable have less land that could be greened near their homes than the least vulnerable? Using the result tables of the Logroño flood-adaptation scenarios analysis (v0.2.0), Spanish Cadastre building footprints and Copernicus Urban Atlas 2018 land use, this repository measures the share of land within 50, 100 and 200 m of each building that could be greened and compares vulnerability groups under present and future design rainfall. It holds one FORRT nanopublication chain (question-rooted) and its headline figure.",
   "version": "0.1.0",
   "dateCreated": "2026-10-11",
   "dateModified": "2026-10-11",
@@ -15,7 +15,10 @@
     "name": "Python",
     "version": "3.12"
   },
-  "operatingSystem": ["Linux", "macOS"],
+  "operatingSystem": [
+    "Linux",
+    "macOS"
+  ],
   "author": [
     {
       "@type": "Person",
@@ -29,8 +32,12 @@
     }
   ],
   "keywords": [
-    "replication",
-    "reproducibility",
+    "pluvial flooding",
+    "flood risk",
+    "social vulnerability",
+    "environmental justice",
+    "urban green space",
+    "Logroño",
     "FORRT",
     "nanopublication",
     "Science-Live"
@@ -45,5 +52,27 @@
     "@type": "Organization",
     "name": "Science Live",
     "url": "https://platform.sciencelive4all.org"
-  }
+  },
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "logrono-flood-adaptation-scenarios",
+      "version": "0.2.0",
+      "identifier": "https://doi.org/10.5281/zenodo.23302113"
+    }
+  ],
+  "citation": [
+    {
+      "@id": "https://doi.org/10.5194/nhess-26-2765-2026"
+    },
+    {
+      "@id": "https://doi.org/10.5281/zenodo.23302113"
+    },
+    {
+      "@id": "https://doi.org/10.2909/9911fe21-57f6-46fb-ae26-d76e7bb6378f"
+    },
+    {
+      "@id": "https://doi.org/10.5281/zenodo.14035876"
+    }
+  ]
 }

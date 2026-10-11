@@ -1,4 +1,4 @@
-# logrono-vulnerable-room-to-green
+# Room to green near the homes of socially vulnerable residents at pluvial flood risk in Logroño
 
 [![CI](https://github.com/annefou/logrono-vulnerable-room-to-green/actions/workflows/ci.yml/badge.svg)](https://github.com/annefou/logrono-vulnerable-room-to-green/actions/workflows/ci.yml)
 [![Jupyter Book](https://github.com/annefou/logrono-vulnerable-room-to-green/actions/workflows/jupyter-book.yml/badge.svg)](https://annefou.github.io/logrono-vulnerable-room-to-green/)
@@ -11,14 +11,21 @@
 [![RO-Crate](https://img.shields.io/badge/RO--Crate-1.2-orange)](ro-crate-metadata.json)
 [![Software Heritage](https://archive.softwareheritage.org/badge/origin/https://github.com/annefou/logrono-vulnerable-room-to-green/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/annefou/logrono-vulnerable-room-to-green)
 
-> **A high-resolution framework for urban pluvial flood risk mapping** — replication study.
-> Reference paper: [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026)
+> **Do the most socially vulnerable residents at pluvial flood risk in Logroño (Spain) have less room to green near their homes than the least vulnerable?** — one FORRT nanopublication chain.
+> Built on the [Logroño flood-adaptation scenarios analysis v0.2.0](https://doi.org/10.5281/zenodo.23302113) ([repository](https://github.com/annefou/logrono-flood-adaptation-scenarios)). Method: [Vogelbacher et al. (2026), NHESS](https://doi.org/10.5194/nhess-26-2765-2026).
 
-This is a self-contained replication of the headline claim of the reference paper. It produces a reproducible computational pipeline, a Zenodo-archived release with a citable DOI, and a FORRT-tagged nanopublication chain on the [Science Live platform](https://platform.sciencelive4all.org).
+**Finding (AIDA):** *In Logroño, the most socially vulnerable residents at pluvial flood risk have less land that could be greened near their homes than the least vulnerable.* With the current green cover, the most vulnerable fifth of residents at risk has on average 4 to 6 % of the land within 100 m of their homes in land-use classes that could be greened, against 17 to 20 % for the least vulnerable fifth: less in all 42 comparisons (3 climates, 7 return periods, 2 risk indices; all p ≤ 0.0002) and in all 492 comparisons across 50, 100 and 200 m and every REACHOUT land cover. The finding is descriptive: it does not show that the lack of room is why city-wide greening helps the most vulnerable least ([greening chain](https://github.com/annefou/logrono-greening-flood-risk-vulnerability)), but it means that protecting them will likely depend on measures other than greening.
 
----
+![Headline figure](figures/main_result.png)
 
-## Quick start
+## Pipeline
+
+| Step | Notebook | What it does |
+|---|---|---|
+| 1 | [`01_data_download`](notebooks/01_data_download.py) | Downloads the analysis release (MD5-checked), the Cadastre INSPIRE buildings and Urban Atlas 2018 (neither is committed) |
+| 2 | [`02_data_clean`](notebooks/02_data_clean.py) | Land that could be greened within 50 / 100 / 200 m of each assessed building; residents at risk per map |
+| 3 | [`03_analysis`](notebooks/03_analysis.py) | Most vs least vulnerable fifth, permutation tests, robustness, cross-check with the release (`results/claim_test.json`) |
+| 4 | [`04_figures`](notebooks/04_figures.py) | `figures/main_result.png` |
 
 ```bash
 git clone https://github.com/annefou/logrono-vulnerable-room-to-green.git
@@ -27,98 +34,16 @@ pixi install
 pixi run snakemake --cores 1
 ```
 
-(Pixi resolves `pixi.toml` against the per-platform `pixi.lock`, installs the env under `.pixi/`, and provides `pixi run` for any task without needing an `activate` step.)
+## The chain
 
-Or with Docker:
+Drafts in [`nanopubs/drafts/`](nanopubs/drafts/), the wizard hand-off in [`nanopubs/chain-draft.json`](nanopubs/chain-draft.json), published URIs in [`nanopubs/PUBLISHED.md`](nanopubs/PUBLISHED.md). It extends the greening chain's Outcome (<https://w3id.org/sciencelive/np/RA7f_o-KNPr1Rq2OPPJD47XcUYtPvIRF4rRDqFg-tsZgA>). Sibling chains: [future rainfall](https://github.com/annefou/logrono-future-rainfall-flood-risk), [planned nature-based solutions](https://github.com/annefou/logrono-planned-nbs-flood-risk), [city-wide greening](https://github.com/annefou/logrono-greening-flood-risk-vulnerability).
 
-```bash
-docker run --rm ghcr.io/annefou/logrono-vulnerable-room-to-green:latest
-```
+## Data and credits
 
-The Jupyter Book version is at <https://annefou.github.io/logrono-vulnerable-room-to-green/>.
-
-## Built from a template
-
-This repository was created from [`sciencelivehub/forrt-replication-template`](https://github.com/sciencelivehub/forrt-replication-template). The template ships an operating manual for AI assistants ([`CLAUDE.md`](CLAUDE.md), [`AGENTS.md`](AGENTS.md)), domain conventions ([`DOMAIN.md`](DOMAIN.md)), and reference docs (`docs/`) so that an AI working only inside this repository can guide a researcher from "paper PDF + GitHub repo" to "published FORRT chain + Zenodo DOI" with no other context.
-
-If you are reading this in a fresh fork, run [`/init-template`](.claude/skills/init-template/SKILL.md) inside Claude Code to substitute the placeholder tokens with your details. (For other AI tools, see [`docs/ai-portability.md`](docs/ai-portability.md).)
-
-After `/init-template`, do these one-time setup steps to enable the full CI/CD path:
-
-- **Enable GitHub Pages** at *Settings → Pages → Source: GitHub Actions*. Until enabled, the Jupyter Book build runs but the deploy step is skipped (CI stays green).
-- All three workflows share one **readiness guard** (`.github/actions/check-ready`). Before `/init-template` runs, the `.template-uninitialised` sentinel makes them skip with an informative `::notice::` (badges stay green); `/init-template` deletes the sentinel, which activates them. They also skip while `notebooks/*.py` are still scaffolds (Phase 2). **Once you've published a nanopub chain** (real URIs in `nanopubs/PUBLISHED.md`), a skip is treated as a bug and **fails the run loudly** — so a finished replication can't sit on silently-green-but-empty CI.
-
-## Repository structure
-
-```
-.
-├── CLAUDE.md / AGENTS.md       # operating manual for AI assistants
-├── DOMAIN.md                   # domain flavour (current: biodiversity + earth observation)
-├── USER_PREFERENCES.md         # per-user style (edit on first clone)
-├── README.md                   # this file
-├── LICENSE                     # MIT
-├── CITATION.cff                # how to cite
-├── codemeta.json               # software metadata (CodeMeta-2.0)
-├── ro-crate-metadata.json      # research object packaging (RO-Crate 1.2)
-├── pixi.toml + pixi.lock       # pinned dependencies (single source of truth; lockfile is per-platform)
-├── Dockerfile                  # container build
-├── Snakefile                   # pipeline orchestration
-├── myst.yml + index.md         # Jupyter Book scaffold
-├── paper/                      # the source paper PDF
-├── data/                       # downloaded artefacts (gitignored)
-├── notebooks/                  # jupytext .py pipeline (01–04)
-├── nanopubs/                   # FORRT chain drafts + published-URI registry
-├── docs/                       # reference material
-├── figures/                    # curated figures used in the Jupyter Book
-├── .github/workflows/          # CI, Jupyter Book, Docker
-└── .claude/                    # Claude Code agents, skills, sandbox config
-```
-
-## What you get
-
-This template bakes in conventions that took multiple replications to discover. By using it, you inherit:
-
-- **FAIR4RS conformance** — see [`docs/fair4rs-checklist.md`](docs/fair4rs-checklist.md) for the principle-by-principle mapping.
-- **Self-contained data downloads** — the first notebook fetches everything; no manual data prep.
-- **`pixi.toml` + `pixi.lock` as single source of truth** — local dev, Docker, and CI all install the same per-platform-pinned env.
-- **`prefix-dev/setup-pixi`-based CI** — caches the env, runs the pipeline with `pixi run`, executes notebooks via a glob, fails fast on a stale lockfile.
-- **Jupyter Book deployment** — auto-deploys to GitHub Pages with `BASE_URL` set correctly. (Don't put `base_url` in `myst.yml` — MyST silently ignores it.)
-- **Docker + GHCR + Zenodo image archival** — `release` trigger pushes to GHCR and (optionally) archives to Zenodo for long-term preservation.
-- **RO-Crate packaging** — the entire repo is a navigable Research Object via `ro-crate-metadata.json` (Process Run Crate + Workflow RO-Crate profiles).
-- **Six-step FORRT chain workspace** — `nanopubs/drafts/` has a field-by-field skeleton for each step. `nanopubs/PUBLISHED.md` is the URI registry.
-- **Layered AI guidance** — `CLAUDE.md` (universal) + `DOMAIN.md` (swappable per field) + `USER_PREFERENCES.md` (per-user). See [`docs/ai-portability.md`](docs/ai-portability.md) for non-Claude AI tools.
-- **Sandbox by default** — `.claude/settings.json` denies file ops outside the repo, so a fresh AI session can't accidentally read `~/.ssh/` or write to `/etc/`.
-
-## The six FORRT chain steps
-
-A complete FORRT chain has six steps published on [platform.sciencelive4all.org](https://platform.sciencelive4all.org):
-
-```
-Quote-with-comment  →  AIDA  →  FORRT Claim  →  Replication Study  →  Replication Outcome  →  CiTO Citation
-```
-
-(For question-rooted chains with no upstream paper, replace step 1 with PICO or PCC. See [`docs/chain-decision-tree.md`](docs/chain-decision-tree.md).)
-
-Drafts live in [`nanopubs/drafts/`](nanopubs/drafts/) field-by-field. Published URIs go into [`nanopubs/PUBLISHED.md`](nanopubs/PUBLISHED.md).
-
-Optional further layers:
-
-- **Research Software nanopub** — for reusable upstream tools (not demo repos). See [`docs/forrt-form-fields.md`](docs/forrt-form-fields.md) § Research Software.
-- **Research Synthesis nanopub** — when this chain is part of a multi-chain story. See [`docs/forrt-form-fields.md`](docs/forrt-form-fields.md) § Research Synthesis.
-
-## After publishing
-
-When the chain is live and the FAIR4RS checklist is green, drafting an announcement post is the next step. See [`docs/announcement-template.md`](docs/announcement-template.md) for the structural template (vision-piece-first; the worked replication is the payoff, not the lead).
-
-For lower-level nanopub work — retraction, superseding, batch publishing — see [`docs/programmatic-nanopubs.md`](docs/programmatic-nanopubs.md).
+Flood maps: Andrea Staccione, Jeremy S. Pal (REACHOUT, CC BY 4.0). Building footprints: derived from data of the Dirección General del Catastro (Catastro INSPIRE licence of access and use, 2016; the original files are not redistributed). Land use: Copernicus Urban Atlas 2018, European Environment Agency. Census: INE.
 
 ## Citation
 
-If you use this work, please cite both:
+Cite via [`CITATION.cff`](CITATION.cff) → DOI [{{ZENODO_DOI}}]({{ZENODO_DOI}}), with the analysis [10.5281/zenodo.23302113](https://doi.org/10.5281/zenodo.23302113) and the method paper [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026).
 
-- This software: [`CITATION.cff`](CITATION.cff) → DOI [{{ZENODO_DOI}}]({{ZENODO_DOI}})
-- The original paper: [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026)
-
-## Acknowledgements
-
-This repository was built from [`sciencelivehub/forrt-replication-template`](https://github.com/sciencelivehub/forrt-replication-template), part of the [Science Live platform](https://platform.sciencelive4all.org). The template is licensed MIT and contributions (especially new domain flavours under [`docs/domain-flavours/`](docs/domain-flavours/)) are welcome.
+Created from [`sciencelivehub/forrt-replication-template`](https://github.com/sciencelivehub/forrt-replication-template); see [`CLAUDE.md`](CLAUDE.md).
