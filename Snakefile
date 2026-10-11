@@ -50,6 +50,7 @@ rule analysis:
         f"{RESULTS}/room_comparisons.csv",
         f"{RESULTS}/room_robustness.csv",
         f"{RESULTS}/crosscheck_release.csv",
+        f"{RESULTS}/room_vs_taken_out.csv",
     shell:
         f"cd {{NOTEBOOKS}} && jupytext --to notebook --execute 03_analysis.py"
 

@@ -129,6 +129,44 @@ print(f"{len(check)} comparisons; largest absolute difference "
       f"{check[['abs_diff_q1', 'abs_diff_q5']].max().max():.4f}")
 
 # %% [markdown]
+# ## Context, not part of the finding: does room to green predict who greening takes out of risk?
+#
+# Within each fifth, residents at risk with the current green cover are split into those
+# the all-green scenario takes out of risk (neither risk index above zero) and those who
+# remain; the resident-weighted mean share at 100 m of the two sets is compared. If more
+# room to green went with leaving risk, the taken-out set would have more in most cases.
+
+# %%
+def at_any(g: pd.DataFrame) -> pd.Series:
+    return g["at_risk_PFRWB"] | g["at_risk_PFRMA"]
+
+
+share = room["greenable_share_100m"]
+link = []
+for (cl, rp), g in buildings[buildings["land_cover"].isin(["Baseline", "Allgreen"])].groupby(["climate", "rp"]):
+    cur = g[g["land_cover"] == "Baseline"].set_index("ID")
+    grn = g[g["land_cover"] == "Allgreen"].set_index("ID").reindex(cur.index)
+    if grn["R"].isna().all():
+        continue
+    out = at_any(cur) & ~at_any(grn).fillna(True).astype(bool)
+    for k in [1, 5]:
+        m = at_any(cur) & (cur["vulnerability_group"] == k)
+        o, s_ = cur.index[m & out], cur.index[m & ~out]
+        if len(o) == 0 or len(s_) == 0:
+            continue
+        link.append({"climate": cl, "rp": rp, "group": k,
+                     "share_taken_out": float(np.average(share.reindex(o), weights=cur.loc[o, "R"])),
+                     "share_remaining": float(np.average(share.reindex(s_), weights=cur.loc[s_, "R"]))})
+link = pd.DataFrame(link)
+link["taken_out_has_more"] = link["share_taken_out"] > link["share_remaining"]
+link.to_csv(RESULTS / "room_vs_taken_out.csv", index=False)
+link_summary = link.groupby("group").agg(cases=("taken_out_has_more", "size"),
+                                         taken_out_has_more=("taken_out_has_more", "sum"),
+                                         share_taken_out=("share_taken_out", "mean"),
+                                         share_remaining=("share_remaining", "mean"))
+print(link_summary.round(3).to_string())
+
+# %% [markdown]
 # ## Does the finding hold?
 
 # %%
@@ -146,6 +184,8 @@ claim = {
     "q5_less_in_all": int((comp["difference"] < 0).sum()),
     "buildings_matched_in_cadastre": int(len(room)),
     "crosscheck_max_abs_diff": float(check[["abs_diff_q1", "abs_diff_q5"]].max().max()),
+    "context_room_vs_taken_out": {f"q{k}": {"cases": int(r.cases), "taken_out_has_more": int(r.taken_out_has_more)}
+                                  for k, r in link_summary.iterrows()},
 }
 claim["holds"] = (claim["q5_less_in"] == n_main and claim["significant_q5_more_p_lt_0.05"] == 0)
 (RESULTS / "claim_test.json").write_text(json.dumps(claim, indent=2, ensure_ascii=False))

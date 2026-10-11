@@ -14,7 +14,7 @@ Atomic, Independent, Declarative, Absolute. One empirical finding. Must end with
 > _If your draft AIDA contains "and" linking two distinct findings, split into two AIDA nanopubs._
 
 ```
-
+In Logroño, the most socially vulnerable residents at pluvial flood risk have less land that could be greened near their homes than the least vulnerable.
 ```
 
 <!-- field: topic -->
@@ -23,7 +23,10 @@ Atomic, Independent, Declarative, Absolute. One empirical finding. Must end with
 Predefined topic vocabulary — list the labels you intend to pick from the dropdown.
 
 ```
-
+social vulnerability (Q581445)
+environmental justice (Q1479527)
+urban green space (Q22652)
+flood risk (Q2288778)
 ```
 
 <!-- field: project -->
@@ -45,8 +48,8 @@ Pull the URI from `nanopubs/PUBLISHED.md`.
 
 DOIs/URLs of datasets that ground the AIDA claim.
 
-- _DOI 1: ___
-- _DOI 2: ___
+- https://doi.org/10.5281/zenodo.23302113
+- https://doi.org/10.2909/9911fe21-57f6-46fb-ae26-d76e7bb6378f
 
 <!-- field: publication -->
 ### Supported by other publications (text input, optional)

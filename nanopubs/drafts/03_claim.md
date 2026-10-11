@@ -12,7 +12,7 @@
 Slug becomes part of the nanopub URI. Use kebab-case.
 
 ```
-
+logrono-vulnerable-room-to-green-claim
 ```
 
 <!-- field: label -->
@@ -21,7 +21,7 @@ Slug becomes part of the nanopub URI. Use kebab-case.
 A descriptive title (not a sentence). Used for searches/discovery.
 
 ```
-
+The most socially vulnerable residents at pluvial flood risk in Logroño have less room to green near their homes
 ```
 
 <!-- field: aida -->
@@ -43,7 +43,7 @@ Pick one. See `docs/claim-type-vocabulary.md` for the seven options and how to c
 - [ ] computational performance (Computational & Performance)
 - [ ] data governance (access control, licensing, FAIR compliance)
 - [ ] data quality (preprocessing, validation, normalization)
-- [ ] descriptive pattern (distribution, trend, proportion)
+- [x] descriptive pattern (distribution, trend, proportion)
 - [ ] model performance (accuracy, F1 score, evaluation metrics)
 - [ ] scalability (Computational & Performance)
 - [ ] statistical significance (significant difference, relationship, or effect)
@@ -54,7 +54,7 @@ Pick one. See `docs/claim-type-vocabulary.md` for the seven options and how to c
 Full URL form: `https://doi.org/...` (NOT bare DOI).
 
 ```
-https://doi.org/10.5194/nhess-26-2765-2026
+https://doi.org/10.5281/zenodo.23302113
 ```
 
 ## Publication note

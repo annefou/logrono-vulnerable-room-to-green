@@ -34,13 +34,13 @@ Write the chosen type in the block below (a vocabulary label such as `cites as a
 > **Note:** `replicates` is NOT in the Science Live dropdown (despite existing in upstream CiTO). When citing a notebook/tutorial that was directly reused, use **`credits`** instead.
 
 ```
-
+extends
 ```
 
 ##### DOI or other URL of the cited work (text input)
 
 ```
-https://doi.org/10.5194/nhess-26-2765-2026
+https://w3id.org/sciencelive/np/RA7f_o-KNPr1Rq2OPPJD47XcUYtPvIRF4rRDqFg-tsZgA
 ```
 
 #### Additional citations (optional)
@@ -49,7 +49,10 @@ If the Outcome cites methods papers, related replications, or upstream tools, ad
 
 One line per further citation, in this exact form (each becomes a pre-filled row):
 
-- _Type: ___ → URL: ___
+- Type: uses method in → URL: https://doi.org/10.5194/nhess-26-2765-2026
+- Type: uses data from → URL: https://doi.org/10.5281/zenodo.23302113
+- Type: uses data from → URL: https://doi.org/10.2909/9911fe21-57f6-46fb-ae26-d76e7bb6378f
+- Type: uses data from → URL: https://doi.org/10.5281/zenodo.14035876
 
 ## Publication note
 

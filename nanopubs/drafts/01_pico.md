@@ -19,7 +19,7 @@
 Slug becomes part of the nanopub URI. Use kebab-case.
 
 ```
-
+logrono-vulnerable-room-to-green
 ```
 
 <!-- field: label -->
@@ -28,7 +28,7 @@ Slug becomes part of the nanopub URI. Use kebab-case.
 10-200 characters. Length-bounded.
 
 ```
-
+Do the most socially vulnerable residents at pluvial flood risk in Logroño have less room to green near their homes than the least vulnerable?
 ```
 
 <!-- field: description -->
@@ -37,14 +37,14 @@ Slug becomes part of the nanopub URI. Use kebab-case.
 One coherent sentence/paragraph that names P, I, C, O inline.
 
 ```
-
+In Logroño (Spain), among the residents of buildings at pluvial flood risk, do those in the most socially vulnerable fifth have a smaller share of land that could be greened near their homes than those in the least vulnerable fifth?
 ```
 
 <!-- field: type -->
 ### Question Type (dropdown, required)
 
 - [ ] causation research question - (Does factor X cause outcome Y?)
-- [ ] descriptive research question - (What are the characteristics of X?)
+- [x] descriptive research question - (What are the characteristics of X?)
 - [ ] effectiveness research question - (Does approach X work better than Y?)
 - [ ] experience research question - (How do people experience phenomenon X?)
 - [ ] prediction research question - (What outcomes can we expect from X?)
@@ -55,7 +55,7 @@ One coherent sentence/paragraph that names P, I, C, O inline.
 Who/what is being studied. Discipline-level concept — not implementation. See `docs/pico-study-outcome-levels.md`.
 
 ```
-
+Residents of buildings at pluvial flood risk in Logroño (La Rioja, Spain), described by the social vulnerability of their census area (children, elderly people living alone, unemployment, education).
 ```
 
 <!-- field: interventionGroupDescription -->
@@ -64,7 +64,7 @@ Who/what is being studied. Discipline-level concept — not implementation. See 
 The intervention or exposure being examined. Discipline-level concept.
 
 ```
-
+Residents at risk in the most socially vulnerable fifth of the city's residents.
 ```
 
 <!-- field: comparatorGroupDescription -->
@@ -73,7 +73,7 @@ The intervention or exposure being examined. Discipline-level concept.
 The comparison or control condition. Discipline-level concept.
 
 ```
-
+Residents at risk in the least socially vulnerable fifth of the city's residents.
 ```
 
 <!-- field: outcomeGroupDescription -->
@@ -82,7 +82,7 @@ The comparison or control condition. Discipline-level concept.
 What outcomes are being measured. The kind of measurement, not the value.
 
 ```
-
+The share of land near residents' homes that could be converted to green surfaces.
 ```
 
 ## Publication note

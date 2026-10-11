@@ -16,5 +16,15 @@
   "q5_less_in_all": 492,
   "buildings_matched_in_cadastre": 4540,
   "crosscheck_max_abs_diff": 9.020562075079397e-17,
+  "context_room_vs_taken_out": {
+    "q1": {
+      "cases": 20,
+      "taken_out_has_more": 0
+    },
+    "q5": {
+      "cases": 20,
+      "taken_out_has_more": 9
+    }
+  },
   "holds": true
 }
