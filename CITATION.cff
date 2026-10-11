@@ -3,10 +3,10 @@ title: "Room to green near the homes of socially vulnerable residents at pluvial
 message: "If you use this software, please cite it as below."
 type: software
 authors:
-  - family-names: "Fouilloux"
-    given-names: "Anne"
-    orcid: "https://orcid.org/0000-0002-1784-2920"
-    affiliation: "LifeWatch ERIC"
+- family-names: "Fouilloux"
+  given-names: "Anne"
+  orcid: "https://orcid.org/0000-0002-1784-2920"
+  affiliation: "LifeWatch ERIC"
 repository-code: "https://github.com/annefou/logrono-vulnerable-room-to-green"
 license: MIT
 version: "0.1.0"
@@ -25,77 +25,80 @@ abstract: >-
 # named was gone and "edit by hand" was the only path left. Two repos built from
 # this template then recorded the version DOI two different ways — one a
 # structured identifier, one a prose comment. Hence the automation.)
-doi: "{{ZENODO_DOI}}"
+doi: "10.5281/zenodo.23302694"
 identifiers:
-  - type: doi
-    value: "{{ZENODO_DOI}}"
-    description: "Concept DOI (resolves to the latest version) — cite the project"
-  # On release, the workflow adds:
-  #   - type: doi   value: <version DOI>  "Version DOI for vX.Y.Z — pins this exact release; cite this from nanopubs"
-  #   - type: swh   value: swh:1:rev:<commit>;origin=<repo>  "Software Heritage ID of the vX.Y.Z source tree"
+- type: doi
+  value: 10.5281/zenodo.23302694
+  description: Concept DOI (resolves to the latest version) — cite the project
+- type: doi
+  value: 10.5281/zenodo.23302695
+  description: Version DOI for v0.1.0 — pins this exact release; cite this from nanopubs
+- type: swh
+  value: swh:1:rev:c78bd0a20168d4163598b702f68679872836ba15;origin=https://github.com/annefou/logrono-vulnerable-room-to-green
+  description: Software Heritage ID of the v0.1.0 source tree
 keywords:
-  - pluvial flooding
-  - flood risk
-  - social vulnerability
-  - environmental justice
-  - urban green space
-  - Logroño
-  - FORRT
-  - nanopublication
-  - Science-Live
+- pluvial flooding
+- flood risk
+- social vulnerability
+- environmental justice
+- urban green space
+- Logroño
+- FORRT
+- nanopublication
+- Science-Live
 references:
-  - type: article
-    title: "A high-resolution framework for urban pluvial flood risk mapping"
-    authors:
-      - family-names: "Vogelbacher"
-        given-names: "Anastasia"
-      - family-names: "von Szombathely"
-        given-names: "Malte"
-      - family-names: "Lennartz"
-        given-names: "Marc"
-      - family-names: "Poschlod"
-        given-names: "Benjamin"
-      - family-names: "Sillmann"
-        given-names: "Jana"
-    journal: "Natural Hazards and Earth System Sciences"
-    volume: 26
-    start: 2765
-    end: 2783
-    year: "2026"
-    doi: "10.5194/nhess-26-2765-2026"
-  - type: software
-    title: "Building-level pluvial flood risk in Logroño under future rainfall and nature-based solution scenarios"
-    authors:
-      - family-names: "Fouilloux"
-        given-names: "Anne"
-    version: "v0.2.0"
-    year: "2026"
-    doi: "10.5281/zenodo.23302113"
-    notes: "The shared analysis whose result tables this repository uses (notebooks/01_data_download.py)."
-  - type: dataset
-    title: "Urban Atlas Land Cover/Land Use 2018 (vector), Europe, 3-yearly"
-    authors:
-      - name: "European Environment Agency"
-    year: "2026"
-    doi: "10.2909/9911fe21-57f6-46fb-ae26-d76e7bb6378f"
-  - type: dataset
-    title: "INSPIRE Buildings, municipality 26900 (Logroño)"
-    authors:
-      - name: "Dirección General del Catastro"
-    url: "https://www.catastro.hacienda.gob.es/webinspire/index.html"
-    notes: "Downloaded at run time under the Catastro INSPIRE licence of access and use (2016); original files not redistributed."
-  - type: dataset
-    title: "Urban pluvial flood maps under different green cover scenarios"
-    authors:
-      - family-names: "Staccione"
-        given-names: "Andrea"
-      - family-names: "Pal"
-        given-names: "Jeremy S."
-    year: "2024"
-    doi: "10.5281/zenodo.14035876"
+- type: article
+  title: "A high-resolution framework for urban pluvial flood risk mapping"
+  authors:
+  - family-names: "Vogelbacher"
+    given-names: "Anastasia"
+  - family-names: "von Szombathely"
+    given-names: "Malte"
+  - family-names: "Lennartz"
+    given-names: "Marc"
+  - family-names: "Poschlod"
+    given-names: "Benjamin"
+  - family-names: "Sillmann"
+    given-names: "Jana"
+  journal: "Natural Hazards and Earth System Sciences"
+  volume: 26
+  start: 2765
+  end: 2783
+  year: "2026"
+  doi: "10.5194/nhess-26-2765-2026"
+- type: software
+  title: "Building-level pluvial flood risk in Logroño under future rainfall and nature-based solution scenarios"
+  authors:
+  - family-names: "Fouilloux"
+    given-names: "Anne"
+  version: "v0.2.0"
+  year: "2026"
+  doi: "10.5281/zenodo.23302113"
+  notes: "The shared analysis whose result tables this repository uses (notebooks/01_data_download.py)."
+- type: dataset
+  title: "Urban Atlas Land Cover/Land Use 2018 (vector), Europe, 3-yearly"
+  authors:
+  - name: "European Environment Agency"
+  year: "2026"
+  doi: "10.2909/9911fe21-57f6-46fb-ae26-d76e7bb6378f"
+- type: dataset
+  title: "INSPIRE Buildings, municipality 26900 (Logroño)"
+  authors:
+  - name: "Dirección General del Catastro"
+  url: "https://www.catastro.hacienda.gob.es/webinspire/index.html"
+  notes: "Downloaded at run time under the Catastro INSPIRE licence of access and use (2016); original files not redistributed."
+- type: dataset
+  title: "Urban pluvial flood maps under different green cover scenarios"
+  authors:
+  - family-names: "Staccione"
+    given-names: "Andrea"
+  - family-names: "Pal"
+    given-names: "Jeremy S."
+  year: "2024"
+  doi: "10.5281/zenodo.14035876"
   # The FORRT chain this work extends (persistent pointer; regenerate the local
   # summary with /import-from-nanopub <URL>).
-  - type: generic
-    title: "Logroño city-wide greening and social vulnerability — CiTO citation of the greening chain this study extends"
-    url: "https://w3id.org/sciencelive/np/RAbEYU8rm6cKE7_1iSKXBUr1SLo5krtS27_IT1Km1BVqU"
-    notes: "Apex CiTO citation of the greening chain; its Outcome is https://w3id.org/sciencelive/np/RA7f_o-KNPr1Rq2OPPJD47XcUYtPvIRF4rRDqFg-tsZgA"
+- type: generic
+  title: "Logroño city-wide greening and social vulnerability — CiTO citation of the greening chain this study extends"
+  url: "https://w3id.org/sciencelive/np/RAbEYU8rm6cKE7_1iSKXBUr1SLo5krtS27_IT1Km1BVqU"
+  notes: "Apex CiTO citation of the greening chain; its Outcome is https://w3id.org/sciencelive/np/RA7f_o-KNPr1Rq2OPPJD47XcUYtPvIRF4rRDqFg-tsZgA"

@@ -8,4 +8,4 @@
 
 The notebooks: (1) the analysis release, Cadastre buildings and Urban Atlas, (2) land that could be greened per building, (3) the finding by vulnerability group, (4) the figure. The chain is listed in [`nanopubs/PUBLISHED.md`](nanopubs/PUBLISHED.md) once published.
 
-Cite via [`CITATION.cff`](CITATION.cff) → DOI [{{ZENODO_DOI}}]({{ZENODO_DOI}}).
+Cite via [`CITATION.cff`](CITATION.cff) → DOI [10.5281/zenodo.23302694](https://doi.org/10.5281/zenodo.23302694).

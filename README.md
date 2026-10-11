@@ -4,7 +4,7 @@
 [![Jupyter Book](https://github.com/annefou/logrono-vulnerable-room-to-green/actions/workflows/jupyter-book.yml/badge.svg)](https://annefou.github.io/logrono-vulnerable-room-to-green/)
 [![Docker](https://github.com/annefou/logrono-vulnerable-room-to-green/actions/workflows/docker.yml/badge.svg)](https://github.com/annefou/logrono-vulnerable-room-to-green/pkgs/container/logrono-vulnerable-room-to-green)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/{{ZENODO_DOI}}.svg)]({{ZENODO_DOI}})
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23302694.svg)](https://doi.org/10.5281/zenodo.23302694)
 [![FAIR4RS](https://img.shields.io/badge/FAIR4RS-conformant-brightgreen)](docs/fair4rs-checklist.md)
 [![FORRT](https://img.shields.io/badge/FORRT-replication-blue)](https://forrt.org/)
 [![Science Live](https://img.shields.io/badge/Science%20Live-nanopub%20chain-purple)](nanopubs/PUBLISHED.md)
@@ -44,6 +44,6 @@ Flood maps: Andrea Staccione, Jeremy S. Pal (REACHOUT, CC BY 4.0). Building foot
 
 ## Citation
 
-Cite via [`CITATION.cff`](CITATION.cff) → DOI [{{ZENODO_DOI}}]({{ZENODO_DOI}}), with the analysis [10.5281/zenodo.23302113](https://doi.org/10.5281/zenodo.23302113) and the method paper [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026).
+Cite via [`CITATION.cff`](CITATION.cff) → DOI [10.5281/zenodo.23302694](https://doi.org/10.5281/zenodo.23302694), with the analysis [10.5281/zenodo.23302113](https://doi.org/10.5281/zenodo.23302113) and the method paper [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026).
 
 Created from [`sciencelivehub/forrt-replication-template`](https://github.com/sciencelivehub/forrt-replication-template); see [`CLAUDE.md`](CLAUDE.md).

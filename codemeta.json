@@ -8,8 +8,12 @@
   "dateModified": "2026-10-11",
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/annefou/logrono-vulnerable-room-to-green",
-  "identifier": "{{ZENODO_DOI}}",
-  "@id": "{{ZENODO_DOI}}",
+  "identifier": [
+    "https://doi.org/10.5281/zenodo.23302694",
+    "https://doi.org/10.5281/zenodo.23302695",
+    "swh:1:rev:c78bd0a20168d4163598b702f68679872836ba15;origin=https://github.com/annefou/logrono-vulnerable-room-to-green"
+  ],
+  "@id": "https://doi.org/10.5281/zenodo.23302694",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "Python",
