@@ -33,6 +33,10 @@ nbclient = "*"
 ipykernel = "*"
 # --- pipeline driver ---
 snakemake = "*"
+# --- this chain ---
+requests = "*"             # Zenodo release, Cadastre ATOM, EEA map service
+geopandas = "*"            # footprints, land use, buffers
+pyogrio = "*"              # GML / GeoJSON reading
 # --- replace/extend with the deps your replication needs ---
 # Examples (uncomment as needed):
 # statsmodels = "*"          # GLM/GLMM regression

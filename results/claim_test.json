@@ -1,0 +1,20 @@
+{
+  "aida": "In Logroño, the most socially vulnerable residents at pluvial flood risk have less land that could be greened near their homes than the least vulnerable.",
+  "comparisons_current_cover_100m": 42,
+  "q5_less_in": 42,
+  "significant_q5_less_p_lt_0.05": 42,
+  "significant_q5_more_p_lt_0.05": 0,
+  "mean_share_q1_range": [
+    0.17218577632828036,
+    0.19580073516944715
+  ],
+  "mean_share_q5_range": [
+    0.03798285840831739,
+    0.05745331553164259
+  ],
+  "all_comparisons_all_radii_all_covers": 492,
+  "q5_less_in_all": 492,
+  "buildings_matched_in_cadastre": 4540,
+  "crosscheck_max_abs_diff": 9.020562075079397e-17,
+  "holds": true
+}
