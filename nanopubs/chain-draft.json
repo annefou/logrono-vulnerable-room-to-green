@@ -1,0 +1,255 @@
+{
+  "schema_version": "1.0",
+  "kind": "forrt-chain-draft",
+  "chain_shape": "pico",
+  "source": {
+    "repository": "https://github.com/annefou/logrono-vulnerable-room-to-green",
+    "commit": "4b0436bc13dafb2e3c918fe4231580fb438412bd",
+    "figure": "figures/main_result.png"
+  },
+  "steps": [
+    {
+      "step": "01_pico",
+      "template_key": "PICO_RESEARCH_QUESTION",
+      "template_uri": "https://w3id.org/np/RA5e5XeXy_-aNK5giB7kBAEQslTLVydHeM4YYEzhmEE2w",
+      "prefill": {
+        "pico": "logrono-vulnerable-room-to-green",
+        "label": "Do the most socially vulnerable residents at pluvial flood risk in Logroño have less room to green near their homes than the least vulnerable?",
+        "description": "In Logroño (Spain), among the residents of buildings at pluvial flood risk, do those in the most socially vulnerable fifth have a smaller share of land that could be greened near their homes than those in the least vulnerable fifth?",
+        "type": "https://w3id.org/sciencelive/o/terms/DescriptiveResearchQuestion",
+        "populationDescription": "Residents of buildings at pluvial flood risk in Logroño (La Rioja, Spain), described by the social vulnerability of their census area (children, elderly people living alone, unemployment, education).",
+        "interventionGroupDescription": "Residents at risk in the most socially vulnerable fifth of the city's residents.",
+        "comparatorGroupDescription": "Residents at risk in the least socially vulnerable fifth of the city's residents.",
+        "outcomeGroupDescription": "The share of land near residents' homes that could be converted to green surfaces."
+      },
+      "provenance": {
+        "pico": "nanopubs/drafts/01_pico.md",
+        "label": "nanopubs/drafts/01_pico.md",
+        "description": "nanopubs/drafts/01_pico.md",
+        "type": "nanopubs/drafts/01_pico.md",
+        "populationDescription": "nanopubs/drafts/01_pico.md",
+        "interventionGroupDescription": "nanopubs/drafts/01_pico.md",
+        "comparatorGroupDescription": "nanopubs/drafts/01_pico.md",
+        "outcomeGroupDescription": "nanopubs/drafts/01_pico.md"
+      },
+      "manual": [
+        "type"
+      ],
+      "published_uri": null
+    },
+    {
+      "step": "02_aida",
+      "template_key": "AIDA_SENTENCE",
+      "template_uri": "https://w3id.org/np/RALmXhDw3rHcMveTgbv8VtWxijUHwnSqhCmtJFIPKWVaA",
+      "prefill": {
+        "aida": "In Logroño, the most socially vulnerable residents at pluvial flood risk have less land that could be greened near their homes than the least vulnerable.",
+        "topic": [
+          {
+            "uri": "http://www.wikidata.org/entity/Q581445",
+            "label": "social vulnerability"
+          },
+          {
+            "uri": "http://www.wikidata.org/entity/Q1479527",
+            "label": "environmental justice"
+          },
+          {
+            "uri": "http://www.wikidata.org/entity/Q22652",
+            "label": "urban green space"
+          },
+          {
+            "uri": "http://www.wikidata.org/entity/Q2288778",
+            "label": "flood risk"
+          }
+        ],
+        "st3": [
+          {
+            "dataset": "https://doi.org/10.5281/zenodo.23302113"
+          },
+          {
+            "dataset": "https://doi.org/10.2909/9911fe21-57f6-46fb-ae26-d76e7bb6378f"
+          }
+        ]
+      },
+      "provenance": {
+        "aida": "nanopubs/drafts/02_aida.md",
+        "topic": "nanopubs/drafts/02_aida.md + Wikidata",
+        "st3": "nanopubs/drafts/02_aida.md"
+      },
+      "published_uri": null
+    },
+    {
+      "step": "03_claim",
+      "template_key": "FORRT_CLAIM",
+      "template_uri": "https://w3id.org/np/RAZWyM8D16ya3S1zhCvrG1f0iSpd9-8onVWp0FTvvX7LQ",
+      "prefill": {
+        "claim": "logrono-vulnerable-room-to-green-claim",
+        "label": "The most socially vulnerable residents at pluvial flood risk in Logroño have less room to green near their homes",
+        "forrtType": "https://w3id.org/sciencelive/o/terms/descriptive_pattern-FORRT-Claim",
+        "source": "https://doi.org/10.5194/nhess-26-2765-2026"
+      },
+      "provenance": {
+        "claim": "nanopubs/drafts/03_claim.md",
+        "label": "nanopubs/drafts/03_claim.md",
+        "forrtType": "nanopubs/drafts/03_claim.md",
+        "source": "CITATION.cff"
+      },
+      "manual": [
+        "forrtType"
+      ],
+      "published_uri": null
+    },
+    {
+      "step": "04_study",
+      "template_key": "FORRT_REPLICATION",
+      "template_uri": "https://w3id.org/np/RAuLEjPp-4dTvPwMkfHggTto1CgjIftiGRAgHlyeEonjQ",
+      "prefill": {
+        "study": "logrono-vulnerable-room-to-green-study",
+        "label": "Land that could be greened near the homes of more and less socially vulnerable residents at pluvial flood risk in Logroño",
+        "type": "https://w3id.org/sciencelive/o/terms/Replication-Study",
+        "scope": "Whether, among the residents of buildings at pluvial flood risk in Logroño (Spain), those in the most socially vulnerable fifth have a smaller share of land that could be greened near their homes than those in the least vulnerable fifth. In scope: every residential building inside the area modelled by all REACHOUT scenarios; residents at risk with the current green cover under the seven design storms (return periods of 2 to 200 years) and present and future (EURO-CORDEX median and 90th percentile) rainfall, for both risk indices; land within 100 m of each building (50 m and 200 m, and the other REACHOUT land covers, as robustness). Out of scope: whether greening that land would reduce flood risk, or why greening helps the most vulnerable residents least (a within-group check found no consistent link between room to green and leaving risk, so no causal claim is made); land that REACHOUT's all-green scenario actually changes, which is not published; other measures such as storage or drainage; the validity of the vulnerability indicators.",
+        "methodology": "Residents at risk and vulnerability: the shared analysis Logroño flood-adaptation scenarios, release v0.2.0 (10.5281/zenodo.23302113), whose result tables this chain reads: building-level risk from REACHOUT's SaferRAIN flood maps (10.5281/zenodo.14035876) through building-climate-risk v0.2.1 (10.5281/zenodo.23285504) with the framework of Vogelbacher et al. (2026); a building's residents are at risk for a risk index when that index is above zero. Social vulnerability: the census-section-rate version of the framework's index, ranked over all residential buildings, with residents split into five groups of equal population. Building footprints: Spanish Cadastre INSPIRE Buildings for Logroño (ATOM download; all 4,540 assessed buildings matched by Cadastre identifier). Land that could be greened: Copernicus Urban Atlas 2018 (FUA ES018L2, 10.2909/9911fe21-57f6-46fb-ae26-d76e7bb6378f) classes of low and very low density urban fabric, construction sites, land without current use, green urban areas, sports and leisure facilities, agricultural, forest and semi-natural land and wetlands; for each building, the share of the area within 100 m of its footprint lying in those classes. Measure: per climate, return period and risk index, the resident-weighted mean share for the at-risk residents of the most and of the least vulnerable fifth, with one-sided permutation tests in each direction (buildings shuffled between the two groups, 10,000 times, fixed seed). Decision rule, fixed before running: the finding holds if the most vulnerable fifth has less land in every current-cover comparison at 100 m and none shows significantly more. Robustness: 50 m and 200 m and the other land covers; cross-check against the same measure computed in the analysis release.",
+        "deviation": "From the framework of Vogelbacher et al. (2026), inherited from the analysis: (1) hazard model REACHOUT SaferRAIN (fill-and-spill with infiltration, no sewer network, 15-minute storms) instead of VISDOM-SWMM; (2) social vulnerability from census-section rates rather than counts per building, so every building in a census section has the same vulnerability; (3) residents fixed at 2021; (4) the 157 buildings near the edge of the modelled area (1,851 residents) are left out. New in this study: (5) land that could be greened is a proxy from Urban Atlas land-use classes, not REACHOUT's greening layer, which is not published; (6) the Cadastre footprints are today's download (Last-Modified 21 August 2026), matched to the analysis's buildings by identifier.",
+        "keywordSelection": [
+          {
+            "uri": "http://www.wikidata.org/entity/Q581445",
+            "label": "social vulnerability"
+          },
+          {
+            "uri": "http://www.wikidata.org/entity/Q1479527",
+            "label": "environmental justice"
+          },
+          {
+            "uri": "http://www.wikidata.org/entity/Q22652",
+            "label": "urban green space"
+          },
+          {
+            "uri": "http://www.wikidata.org/entity/Q2421934",
+            "label": "nature-based solutions"
+          },
+          {
+            "uri": "http://www.wikidata.org/entity/Q2288778",
+            "label": "flood risk"
+          },
+          {
+            "uri": "http://www.wikidata.org/entity/Q15909735",
+            "label": "urban flooding"
+          },
+          {
+            "uri": "http://www.wikidata.org/entity/Q14325",
+            "label": "Logroño"
+          }
+        ],
+        "disciplineSelection": {
+          "uri": "http://www.wikidata.org/entity/Q69883",
+          "label": "urban planning"
+        }
+      },
+      "provenance": {
+        "study": "nanopubs/drafts/04_study.md",
+        "label": "nanopubs/drafts/04_study.md",
+        "type": "nanopubs/drafts/04_study.md",
+        "scope": "nanopubs/drafts/04_study.md",
+        "methodology": "nanopubs/drafts/04_study.md",
+        "deviation": "nanopubs/drafts/04_study.md",
+        "keywordSelection": "nanopubs/drafts/04_study.md + Wikidata",
+        "disciplineSelection": "nanopubs/drafts/04_study.md + Wikidata"
+      },
+      "manual": [
+        "type"
+      ],
+      "published_uri": null
+    },
+    {
+      "step": "05_outcome",
+      "template_key": "FORRT_REPLICATION_OUTCOME",
+      "template_uri": "https://w3id.org/np/RA2zljn0Nw9SadppOyxZoh-_Rxosslrq-vYG-p9SttnJE",
+      "prefill": {
+        "outcome": "logrono-vulnerable-room-to-green-outcome",
+        "label": "The most socially vulnerable residents at pluvial flood risk in Logroño have less room to green near their homes",
+        "repo": "https://doi.org/10.5281/zenodo.23302695",
+        "date": "2026-10-11",
+        "validationStatus": "https://w3id.org/sciencelive/o/terms/Validated",
+        "conclusion": "Validated. In Logroño (Spain), the residents at pluvial flood risk in the most socially vulnerable fifth have about a quarter of the land that could be greened near their homes that those in the least vulnerable fifth have: on average 4 to 6 % of the land within 100 m of their buildings against 17 to 20 %. This holds in all 42 comparisons with the current green cover (3 climates, 7 return periods, 2 risk indices), each significant, and in all 492 comparisons across 50, 100 and 200 m and every REACHOUT land cover. The finding is descriptive: within each vulnerability group, residents with more land that could be greened were not consistently the ones that city-wide greening takes out of risk, so it does not explain why greening helps the most vulnerable least. It matters for adaptation planning: near the homes of the most vulnerable residents at risk there is little room for greening, so protecting them will likely depend on other measures.",
+        "evidence": "Current green cover, 100 m, resident-weighted mean share of land that could be greened: least vulnerable fifth 17.2 to 19.6 %, most vulnerable fifth 3.8 to 5.7 % over all 42 comparisons; e.g. 100-year storm with present rainfall, risk to well-being 19.2 % (9,050 residents in 107 buildings) against 4.7 % (3,733 residents in 93 buildings), risk to mobility 17.4 % (12,946 residents, 177 buildings) against 3.9 % (5,887 residents, 170 buildings). Less in 42 of 42 comparisons, all with one-sided permutation p <= 0.0002 (10,000 permutations); significantly more in none. Radius: 50 m 11.4 to 14.3 % against 2.7 to 3.7 %; 200 m 23.8 to 26.1 % against 5.1 to 6.7 %. All 492 comparisons across radii and land covers in the same direction (largest p = 0.046). All 4,540 assessed buildings matched in the Cadastre; the measure equals the analysis release's own to rounding error. Context (not part of the finding): among residents at risk with the current cover, those that city-wide greening takes out of risk had more land that could be greened than those who remain in 0 of 20 cases for the least vulnerable fifth and 9 of 20 for the most vulnerable (results/room_vs_taken_out.csv). Figure: figures/main_result.png; checks: results/claim_test.json, results/room_robustness.csv.",
+        "confidenceLevel": "https://w3id.org/sciencelive/o/terms/HighConfidence",
+        "limitations": "Land that could be greened is a proxy from Urban Atlas 2018 land-use classes, not the cells REACHOUT's all-green scenario changes, which are not published; small courtyards, verges and roofs are not counted, and some counted land may not be available. The finding is descriptive and says nothing about whether greening that land would reduce flood risk. Social vulnerability comes from census-section rates, so all buildings of a section share one value, and it was not validated against impact data. Residents at risk come from REACHOUT's fill-and-spill flood model without sewers and are fixed at 2021; 157 buildings near the edge of the modelled area (1,851 residents) are left out. Many comparisons are made and they overlap, so individual p-values are not adjusted; the finding rests on the direction holding in every comparison."
+      },
+      "provenance": {
+        "outcome": "nanopubs/drafts/05_outcome.md",
+        "label": "nanopubs/drafts/05_outcome.md",
+        "repo": "CITATION.cff",
+        "date": "CITATION.cff",
+        "validationStatus": "nanopubs/drafts/05_outcome.md",
+        "conclusion": "nanopubs/drafts/05_outcome.md",
+        "evidence": "nanopubs/drafts/05_outcome.md",
+        "confidenceLevel": "nanopubs/drafts/05_outcome.md",
+        "limitations": "nanopubs/drafts/05_outcome.md"
+      },
+      "manual": [
+        "validationStatus",
+        "confidenceLevel"
+      ],
+      "published_uri": null
+    },
+    {
+      "step": "06_citation",
+      "template_key": "CITATION_CITO",
+      "template_uri": "https://w3id.org/np/RA43F9EoOuzF0xoNUnCMNyFsfIqlsuWDdPHCnN0wCdCAw",
+      "prefill": {
+        "st02": [
+          {
+            "cites": "http://purl.org/spar/cito/extends",
+            "cited": "https://doi.org/10.5194/nhess-26-2765-2026"
+          },
+          {
+            "cites": "http://purl.org/spar/cito/usesMethodIn",
+            "cited": "https://doi.org/10.5194/nhess-26-2765-2026"
+          },
+          {
+            "cites": "http://purl.org/spar/cito/usesDataFrom",
+            "cited": "https://doi.org/10.5281/zenodo.23302113"
+          },
+          {
+            "cites": "http://purl.org/spar/cito/usesDataFrom",
+            "cited": "https://doi.org/10.2909/9911fe21-57f6-46fb-ae26-d76e7bb6378f"
+          },
+          {
+            "cites": "http://purl.org/spar/cito/usesDataFrom",
+            "cited": "https://doi.org/10.5281/zenodo.14035876"
+          }
+        ]
+      },
+      "provenance": {
+        "st02": "cites = nanopubs/drafts/06_citation.md; cited = CITATION.cff references[article]; further rows = nanopubs/drafts/06_citation.md"
+      },
+      "published_uri": null
+    }
+  ],
+  "carry_forward": [
+    {
+      "from": "01_pico",
+      "into": "02_aida",
+      "field": "project"
+    },
+    {
+      "from": "02_aida",
+      "into": "03_claim",
+      "field": "aida"
+    },
+    {
+      "from": "03_claim",
+      "into": "04_study",
+      "field": "claim"
+    },
+    {
+      "from": "04_study",
+      "into": "05_outcome",
+      "field": "study"
+    },
+    {
+      "from": "05_outcome",
+      "into": "06_citation",
+      "field": "work"
+    }
+  ]
+}
