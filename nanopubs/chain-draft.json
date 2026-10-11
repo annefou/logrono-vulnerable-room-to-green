@@ -4,7 +4,7 @@
   "chain_shape": "pico",
   "source": {
     "repository": "https://github.com/annefou/logrono-vulnerable-room-to-green",
-    "commit": "4b0436bc13dafb2e3c918fe4231580fb438412bd",
+    "commit": "f5b451da908e329a442e5bd8b5254e1d9b473c98",
     "figure": "figures/main_result.png"
   },
   "steps": [
@@ -198,12 +198,12 @@
       "prefill": {
         "st02": [
           {
-            "cites": "http://purl.org/spar/cito/extends",
+            "cites": "http://purl.org/spar/cito/usesMethodIn",
             "cited": "https://doi.org/10.5194/nhess-26-2765-2026"
           },
           {
-            "cites": "http://purl.org/spar/cito/usesMethodIn",
-            "cited": "https://doi.org/10.5194/nhess-26-2765-2026"
+            "cites": "http://purl.org/spar/cito/extends",
+            "cited": "https://w3id.org/sciencelive/np/RA7f_o-KNPr1Rq2OPPJD47XcUYtPvIRF4rRDqFg-tsZgA"
           },
           {
             "cites": "http://purl.org/spar/cito/usesDataFrom",
